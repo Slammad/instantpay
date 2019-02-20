@@ -11,7 +11,7 @@ mongoose.connect("mongodb://localhost:27017/instantpay",{
 })
 
 app.use(morgan('dev'))
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cors())
 

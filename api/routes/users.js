@@ -10,10 +10,7 @@ router.get('/',(req,res,next)=>{
     .exec()
     .then(document=>{
         console.log(document);
-        res.status(200).json({
-            message:"get Request to users",
-            users:document
-        })
+        res.status(200).json(document)
     })
     .catch()
    
@@ -51,6 +48,7 @@ router.post('/signup',(req,res,next)=>{
                     }else{
                         const user= new User({
                             _id:mongoose.Types.ObjectId(),
+                             business:req.body.business,
                              email:req.body.email,
                              password:hash,
                              phones:req.body.phones
